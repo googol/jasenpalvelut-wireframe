@@ -1,0 +1,21 @@
+{
+  "name": "jasenpalvelut-wireframe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ts-node src/index.ts && cp src/*.css dist/",
+    "watch": "concurrently \"nodemon --watch src --ext ts --exec 'npm run build'\" \"reload --dir dist\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^10.14.22",
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.4",
+    "reload": "^3.0.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}
