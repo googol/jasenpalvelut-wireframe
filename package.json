@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist && ts-node src/index.ts && cp src/*.css dist/",
-    "watch": "concurrently \"nodemon --watch src --ext ts --exec 'npm run build'\" \"reload --dir dist\"",
+    "prebuild": "mkdir -p dist",
+    "build": "mkdir -p dist && npm run build:ts && npm run build:css",
+    "build:ts": "ts-node src/index.ts",
+    "build:css": "cp src/*.css dist/",
+    "prewatch": "mkdir -p dist",
+    "watch": "concurrently \"nodemon --watch src --ext ts --exec 'npm run build:ts'\" \"nodemon --watch src --ext css --exec 'npm run build:css'\" \"reload --dir dist\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
