@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ts-node src/index.ts && cp src/*.css dist/",
+    "build": "mkdir -p dist && ts-node src/index.ts && cp src/*.css dist/",
     "watch": "concurrently \"nodemon --watch src --ext ts --exec 'npm run build'\" \"reload --dir dist\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
