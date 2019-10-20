@@ -1,5 +1,16 @@
 html {
   height: 100%;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: normal;
+
+  --musta: #000000;
+  --valkoinen: #ffffff;
+  --partionsininen: #253764;
+  --lisa-oranssi: #efa01e;
+  --lisa-keltainen: #f0e005;
+  --lisa-vihrea: #13a54b;
+  --lisa-sininen: #28a9e1;
+  --lisa-punainen: #f04150;
 }
 
 body {
@@ -8,4 +19,37 @@ body {
   padding: 0;
   position: absolute;
   width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+section {
+  overflow: hidden;
+}
+
+.blue-background {
+  color: var(--valkoinen);
+  background-color: var(--partionsininen);
+}
+
+.membership-card {
+  height: 100vh;
+}
+
+.menubar {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+}
+
+.logo {
+  width: 90px;
 }
