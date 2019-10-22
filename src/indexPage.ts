@@ -27,7 +27,7 @@ function menubar() {
 
 function notifications() {
   return h('section', [
-    h('h2', ['Ilmoitukset']),
+    h('h2', ['Tiedotteet']),
     ...data.notifications.map(notification =>
       h('div', [
         h('h3', [notification.title]),
@@ -36,7 +36,7 @@ function notifications() {
       ])
     ),
     h('h3', [
-      h('a', { href: '/notifications' }, ['Kaikki ilmoitukset']),
+      h('a', { href: '/notifications' }, ['Kaikki tiedotteet']),
     ]),
   ])
 }
