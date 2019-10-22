@@ -1,7 +1,7 @@
 import { h } from './h'
+import * as data from './data'
 
 export const indexPage = [
-  header(),
   membershipCard(),
   menubar(),
   notifications(),
@@ -10,24 +10,12 @@ export const indexPage = [
   membershipBenefits(),
 ]
 
-function header() {
-  return h('section', { class: 'blue-background' }, [
-    h('h1', [h('img', { class: 'logo', src: 'https://partio.emmi.fi/customer/img/partio_logo_w.png' }), 'jäsenpalvelut'])
-  ])
-}
-
 function membershipCard() {
-  const member = {
-    name: 'Matti Meikäläinen',
-    memberNumber: '12345678',
-    localGroup: 'Metsänkävijät',
-    region: 'Pohjanmaan Partiolaiset',
-  }
   return h('section', { class: 'membership-card blue-background' }, [
-    h('h2', [`Hei ${member.name}`]),
-    h('p', [member.localGroup]),
-    h('p', [member.region]),
-    h('p', [member.memberNumber]),
+    h('h2', [`Hei ${data.member.name}`]),
+    h('p', [data.member.localGroup]),
+    h('p', [data.member.region]),
+    h('p', [data.member.memberNumber]),
   ])
 }
 
@@ -40,6 +28,16 @@ function menubar() {
 function notifications() {
   return h('section', [
     h('h2', ['Ilmoitukset']),
+    ...data.notifications.map(notification =>
+      h('div', [
+        h('h3', [notification.title]),
+        h('p', [notification.shortDescription]),
+        h('a', { href: `/notifications-${notification.slug}.html` }, ['Lue ilmoitus']),
+      ])
+    ),
+    h('h3', [
+      h('a', { href: '/notifications' }, ['Kaikki ilmoitukset']),
+    ]),
   ])
 }
 

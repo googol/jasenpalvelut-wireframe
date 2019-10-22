@@ -13,6 +13,11 @@ export function baseLayout(body: readonly HtmlChild[]) {
       h('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Sans|Source+Sans+Pro:400,900&display=swap' }),
       h('link', { rel: 'stylesheet', href: '/main.css' }),
     ]),
-    h('body', body),
+    h('body', [
+      h('section', { class: 'blue-background' }, [
+        h('h1', [h('img', { class: 'logo', src: 'https://partio.emmi.fi/customer/img/partio_logo_w.png' }), 'jäsenpalvelut'])
+      ]),
+      ...body
+    ]),
   ])
 }
